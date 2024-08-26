@@ -1,0 +1,128 @@
+/* src/app/calculator/calculator.component.css */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .calculator {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calculator-display {
+    background: #f0f0f0;
+    color: black;
+    font-size: 2em;
+    padding: 20px;
+    text-align: right;
+  }
+  
+  .calculator-keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .calculator-keypad .row {
+    display: contents;
+  }
+  
+  .calculator-keypad button {
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 1.5em;
+    padding: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .calculator-keypad button:hover {
+    background: #f0f0f0;
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }
+  .calculator .row .equal-sign {
+    background-color:#222;
+    color: white; 
+  }
+  
+  .calculator .row .equal-sign:hover {
+    background-color:gray;
+  }
+  .calculator .row {
+    /* Add your existing styles for row */
+    margin-bottom: 10px; 
+  }
+  
+  .calculator .row button {
+    padding: 10px 20px;
+    margin: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(255, 255, 255, 0.5) inset;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .calculator .row button:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 -1px 1px rgba(255, 255, 255, 0.3) inset;
+  }
+  .history-row {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .history-button {
+    font-size: 24px; /* Adjust size as needed */
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .calculator-history {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .calculator-history h2 {
+    margin-top: 0;
+  }
+  
+  .calculator-history ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .calculator-history li {
+    padding: 5px 0;
+    border-bottom: none;
+  }
+  
+  .calculator-history li:last-child {
+    border-bottom: none;
+  }
+
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .clear-history-button {
+    font-size: 15px; /* Adjust size as needed */
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .clear-history-button i {
+    color: lightgray; /* Adjust color as needed */
+  }

@@ -1,0 +1,60 @@
+<!-- src/app/calculator/calculator.component.html -->
+<div class="container mt-5">
+  <div class="calculator">
+    <div class="row history-row">
+      <button (click)="toggleHistory()" class="history-button">
+        &#128196; <!-- Unicode character for a document icon -->
+      </button>
+    </div>
+    <div class="calculator-display">{{ displayValue }}</div>
+    <div *ngIf="showHistory" class="calculator-history">
+      <div class="history-header">
+        <span *ngIf="history.length === 0">There is no history yet.</span>
+        <button *ngIf="history.length > 0" (click)="clearHistory()" class="clear-history-button">
+          <i class="fas fa-trash"></i> <!-- FontAwesome trash can icon -->
+        </button>
+      </div>
+      <ul>
+        <li *ngFor="let entry of history">{{ entry }}</li>
+      </ul>
+    </div>
+    <div *ngIf="!showHistory" class="calculator-keypad">
+      <div class="row">
+        <button (click)="clear()">C</button>
+        <button (click)="appendValue('(')">(</button>
+        <button (click)="appendValue(')')">)</button>
+        <button (click)="backspace()">←</button>
+      </div>
+      <div class="row">
+        <button (click)="percentage()">%</button>
+        <button (click)="squareRoot()">√</button>
+        <button (click)="square()">x²</button>
+        <button (click)="appendValue('/')">/</button>
+      </div>
+      <div class="row">
+        <button (click)="appendValue('7')">7</button>
+        <button (click)="appendValue('8')">8</button>
+        <button (click)="appendValue('9')">9</button>
+        <button (click)="appendValue('*')">*</button>
+      </div>
+      <div class="row">
+        <button (click)="appendValue('4')">4</button>
+        <button (click)="appendValue('5')">5</button>
+        <button (click)="appendValue('6')">6</button>
+        <button (click)="appendValue('-')">-</button>
+      </div>
+      <div class="row">
+        <button (click)="appendValue('1')">1</button>
+        <button (click)="appendValue('2')">2</button>
+        <button (click)="appendValue('3')">3</button>
+        <button (click)="appendValue('+')">+</button>
+      </div>
+      <div class="row">
+        <button (click)="appendValue('0')" class="zero">0</button>
+        <button (click)="appendValue('.')">.</button>
+        <button (click)="calculate()" class="equal-sign">=</button>
+      </div>
+    </div>
+  </div>
+</div>
+
